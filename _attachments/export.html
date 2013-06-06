@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sessel: Export</title>
+        <link rel="stylesheet" href="stylesheets/bootstrap.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    Sessel
+                    <small>Export</small>
+                </h1>
+            </div>
+            <form id="export-form" class="form-horizontal" method="GET">
+                <div class="control-group">
+                    <label for="base-uri" class="control-label">Base URI</label>
+                    <div class="controls">
+                        <input id="base-uri" name="base_uri" class="input-xxlarge" type="text" />
+                        <span class="help-block">
+                            <span class="label label-info">Hint</span>
+                            The default base URI is ugly but dereferenceable.
+                        </span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="prefix" class="control-label">Prefix</label>
+                    <div class="controls">
+                        <input id="prefix" name="prefix" class="input-xxlarge" type="text" value="sessel" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label for="type-literals" class="checkbox">
+                            <input id="type-literals" name="type_literals" type="checkbox" value="true" />
+                            Type Literals
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="export-btn btn" data-export-format="nt">Export as N-Triples</button>
+                    <button class="export-btn btn" data-export-format="ttl">Export as Turtle</button>
+                    <button class="export-btn btn" data-export-format="rdf">Export as RDF/XML</button>
+                </div>
+            </form>
+        </div>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/export.js"></script>
+    </body>
+</html>

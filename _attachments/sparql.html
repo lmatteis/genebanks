@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sessel: SPARQL Endpoint</title>
+        <link rel="stylesheet" href="stylesheets/bootstrap.css" />
+        <link rel="stylesheet" href="stylesheets/sparql.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    Sessel
+                    <small>SPARQL Endpoint</small>
+                </h1>
+            </div>
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label for="query" class="control-label">SPARQL Query</label>
+                    <div class="controls">
+                        <textarea id="query" class="input-xxlarge" rows="6">SELECT * WHERE {?a ?b ?c .} LIMIT 25</textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <input type="submit" id="submit" class="btn btn-primary" data-loading-text="Loading triples..." value="Query" autocomplete="off" />
+                    <input type="reset" id="reset" class="btn" value="Reset" />
+                </div>
+            </form>
+            <div id="result-pane">
+                <h2>Results</h2>
+                <table id="results" class="table table-bordered table-striped table-condensed">
+                </table>
+            </div>
+        </div>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/bootstrap.js"></script>
+        <script src="scripts/rdfstore.js"></script>
+        <script src="scripts/sparql.js"></script>
+    </body>
+</html>

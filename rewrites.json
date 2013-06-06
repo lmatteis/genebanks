@@ -1,0 +1,49 @@
+[
+    {
+        "from": "/export.nt",
+        "to": "_list/triples/triples",
+        "query": {
+            "format": "nt"
+        }
+    },
+    {
+        "from": "/export.ttl",
+        "to": "_list/triples/triples",
+        "query": {
+            "format": "ttl"
+        }
+    },
+    {
+        "from": "/export.rdf",
+        "to": "_list/triples/triples",
+        "query": {
+            "format": "rdf"
+        }
+    },
+    {
+        "from": "/export.html",
+        "to": "_list/triples/triples",
+        "query": {
+            "format": "html"
+        }
+    },
+    {
+        "from": "/vocab",
+        "to": "_list/vocab/vocab",
+        "query": {
+            "group": "true"
+        }
+    },
+    {
+        "from": "/:concept/:attachment",
+        "to": "../../:concept/:attachment"
+    },
+    {
+        "from": "/:concept",
+        "to": "_list/triples/triples",
+        "query": {
+            "startkey": [":concept"],
+            "endkey": [":concept", {}]
+        }
+    }
+]
