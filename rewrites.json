@@ -1,5 +1,9 @@
 [
     {
+        "from": "/",
+        "to": "index.html"
+    },
+    {
         "from": "/export.nt",
         "to": "_list/triples/triples",
         "query": {
