@@ -15,8 +15,34 @@
     </h1>
 
 
-    <h2>Introduction</h2>
-    <p>A gesture mania is sweeping over us app makers. It has reached a point where some of us boast unique gestures and novel usage of common gestures as a high point of our apps. The media praises these apps for their coolness and people rush to download them. It is only natural for the uninformed app makers to be seduced by this apparent success and get motivated to act their part in innovating gestures.</p>
+    <table border="1" class="triples">
+        <tbody>
+            <tr>
+                <td>
+                    <b>Subject</b>
+                </td>
+                <td>
+                    <b>Predicate</b>
+                </td>
+                <td>
+                    <b>Object</b>
+                </td>
+            </tr>
+    {{#triples}}
+            <tr>
+                <td>
+                    <a href="{{subject}}">{{subject}}</a>
+                </td>
+                <td>
+                    <a href="{{predicate}}">{{predicate}}</a>
+                </td>
+                <td>
+                    <a href="{{object}}">{{object}}</a>
+                </td>
+            </tr>
+    {{/triples}}
+        </tbody>
+    </table>
 
     </div><!-- /article -->
 </div> <!-- /wrap -->

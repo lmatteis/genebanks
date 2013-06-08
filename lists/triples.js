@@ -303,14 +303,10 @@ function (head, req) {
      * Output HTML.
      */
     provides("html", function () {
-        var row,
-                Mustache = require('views/lib/mustache');
-
-        var firstSubject, currentSubject;
-        firstSubject = true;
+        var Mustache = require('views/lib/mustache');
 
         var data = {
-            triples = []
+            triples: []
         };
         tripleIterator(function (triple, annotations) {
             var subject, predicate, object;
@@ -319,8 +315,11 @@ function (head, req) {
             object = triple[2];
 
             data.triples.push({
-                subject: subject
+                subject: subject,
+                predicate: predicate,
+                object: object
             });
+
         });
 
         var html = Mustache.to_html(this.templates.index, data);

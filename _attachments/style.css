@@ -79,8 +79,14 @@ p {
 }
 
 a {
-    color: #ed4722;
+    color: #366cf2
     text-decoration: none;
+}
+a:hover {
+    color: rgb(113, 144, 223);
+}
+a:visited {
+    color: #366cf2
 }
 
 /*
@@ -165,6 +171,28 @@ footer img {
     margin: 30px 20px 0 0;
     /*border: 1px solid #d9ceb8;*/
     box-shadow: 0px -2px 0px rgba(0, 0, 0, .15);
+}
+
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+table td, table th {
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-right: 0;
+    padding: 5px 15px;
+    font-size: 12px;
+}
+table td, table th {
+    line-height: 1.4;
+    vertical-align: top;
 }
 
 /* Responsive CSS */
