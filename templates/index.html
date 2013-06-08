@@ -17,6 +17,27 @@
 
     <table border="1" class="triples">
         <tbody>
+        {{#subjectPage}}
+            <tr>
+                <td>
+                    <b>Label</b>
+                </td>
+                <td>
+                    <b>URI</b>
+                </td>
+            </tr>
+            {{#subjects}}
+            <tr>
+                <td>
+                    label
+                </td>
+                <td>
+                    <a href="http://data.genebanks.org/{{key}}">http://data.genebanks.org/{{key}}</a>
+                </td>
+            </tr>
+            {{/subjects}}
+        {{/subjectPage}}
+        {{^subjectPage}}
             <tr>
                 <td>
                     <b>Subject</b>
@@ -28,7 +49,7 @@
                     <b>Object</b>
                 </td>
             </tr>
-    {{#triples}}
+            {{#triples}}
             <tr>
                 <td>
                     <a href="{{subject}}">{{subject}}</a>
@@ -40,9 +61,14 @@
                     <a href="{{object}}">{{object}}</a>
                 </td>
             </tr>
-    {{/triples}}
+            {{/triples}}
+        {{/subjectPage}}
         </tbody>
     </table>
+
+    {{#subjectPage}}
+    <h2><a href="?skip={{skip}}">Next</a></h2>
+    {{/subjectPage}}
 
     </div><!-- /article -->
 </div> <!-- /wrap -->

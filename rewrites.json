@@ -1,10 +1,10 @@
 [
     {
         "from": "/",
-        "to": "_list/triples/triples",
+        "to": "_list/subjects/subjects",
         "query": { 
             "descending": "true", 
-            "limit": "30" 
+            "limit": "50" 
         }
     },
     {
