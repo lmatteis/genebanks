@@ -49,7 +49,8 @@ function (head, req) {
         baseUri = req.query["base_uri"];
     } else {
      // "Host" is a mandatory header since HTTP/1.1.
-        baseUri = "http://" + req.headers["Host"] + "/" + req.info.db_name + "/_design/sessel/_rewrite/";
+        //baseUri = "http://" + req.headers["Host"] + "/" + req.info.db_name + "/_design/sessel/_rewrite/";
+        baseUri = "http://" + req.headers["Host"] + "/";
     }
 
     /**
@@ -302,30 +303,28 @@ function (head, req) {
      * Output HTML.
      */
     provides("html", function () {
+        var row,
+                Mustache = require('views/lib/mustache');
+
         var firstSubject, currentSubject;
         firstSubject = true;
-        send("<DOCTYPE html>\n");
-        send("<meta charset=\"UTF-8\" />\n");
-        send("<title>" + req.info.db_name + " &ndash; Sessel</title>\n");
+
+        var data = {
+            triples = []
+        };
         tripleIterator(function (triple, annotations) {
             var subject, predicate, object;
             subject = baseUri + triple[0];
             predicate = baseUri + "vocab/#" + triple[1];
             object = triple[2];
-            if (firstSubject === true || currentSubject !== triple[0]) {
-             // Skip first period.
-                if (firstSubject === true) {
-                    firstSubject = false;
-                } else {
-                    send("</ul>\n");
-                }
-                send("<h2><a href=\"" + subject + "\">&lt;" + subject + "&gt;</a></h2>\n");
-                send("<ul>\n");
-            }
-            send("  <li><a href=\"" + predicate + "\">&lt;" + predicate + "&gt;</a>: " + object + "</li>\n");
-            currentSubject = triple[0];
+
+            data.triples.push({
+                subject: subject
+            });
         });
-        send("</ul>\n");
+
+        var html = Mustache.to_html(this.templates.index, data);
+        send(html);
     });
 
 }

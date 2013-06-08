@@ -1,7 +1,15 @@
 [
     {
         "from": "/",
-        "to": "index.html"
+        "to": "_list/triples/triples",
+        "query": { 
+            "descending": "true", 
+            "limit": "30" 
+        }
+    },
+    {
+        "from": "/style.css",
+        "to": "style.css"
     },
     {
         "from": "/export.nt",

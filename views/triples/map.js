@@ -52,7 +52,7 @@ function (doc) {
         if (key.charAt(0) !== "_") {
             type = toType(value);
          // URL encode key and property.
-            subject = encodeURIComponent(doc._id);
+            subject = encodeURIComponent(doc._id.replace(/ /g, "_"));
             predicate = encodeURIComponent(key);
          // Stringify value.
             object = JSON.stringify(value);
